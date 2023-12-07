@@ -30,7 +30,7 @@
             android:layout_below="@id/startButton"
             android:layout_marginTop="16dp"
             android:layout_centerHorizontal="true"
-            android:enabled="false"
+            android:enabled="true"
             android:onClick="onClick"/>
         <Button
             android:id="@+id/chageApiButton"
