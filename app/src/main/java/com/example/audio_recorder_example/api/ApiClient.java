@@ -7,13 +7,13 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String OPENAPI_URL = "https://api.openai.com";
+    public static final String API_URL = "http://211.20.7.116:5000";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(OPENAPI_URL)
+                    .baseUrl(API_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .build();
@@ -21,7 +21,7 @@ public class ApiClient {
         return retrofit;
     }
     @NonNull
-    public OpenApiService getApiService() {
-        return getClient().create(OpenApiService.class);
+    public ApiService getApiService() {
+        return getClient().create(ApiService.class);
     }
 }
